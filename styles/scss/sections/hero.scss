@@ -1,0 +1,62 @@
+#hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 5rem;
+}
+
+.hero__portrait {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    div {
+        border-radius: 20rem;
+        overflow: hidden;
+        border: 1rem solid $primary-100;
+        box-shadow: 0 0 1rem $primary-400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20rem;
+        width: 20rem;
+        
+        img {
+            width: inherit;
+            height: inherit;
+            object-fit: cover;
+            object-position: center;
+        }
+    }   
+}
+
+.hero__about {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    p {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+    }
+}
+
+body.dark {
+    .hero__portrait {
+        div {
+            border-color: $primary-800;
+            box-shadow: 0 0 1rem $dark-shadow;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+    #hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 20rem 0;
+    }   
+}

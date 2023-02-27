@@ -1,0 +1,95 @@
+.verticalBar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: $primary-100;
+    justify-content: start;
+    padding: 1rem;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+        
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            width: 50%;
+            align-self: flex-end;
+        }
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            stroke: $primary-900;
+            cursor: pointer;
+        }
+
+        .cross {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: none;
+            border: none;
+            align-self: flex-end;
+            cursor: pointer;
+            
+            span, span::after {
+                width: 100%;
+                height: 4px;
+                background: $primary-900;
+                border-radius: 20rem;
+            }
+
+            span {
+                position: relative;
+                transform: rotate(45deg);
+            }
+            span::after {
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: 0;
+                transform: rotate(-90deg);
+            }
+        }
+
+        a {
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: $primary-900;
+        }
+    }
+} 
+
+body.dark {
+    .verticalBar {
+        background: $primary-900;
+
+        .container {
+            a {
+                color: $primary-100
+            }
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+                stroke: $primary-100;
+            }
+
+            .cross {
+                span, span::after {
+                background: $primary-100;
+            }
+            }
+        }
+    }
+}

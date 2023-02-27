@@ -1,0 +1,133 @@
+#expertises {
+    background: $primary-200;
+    padding: $section-p;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: .9rem;
+    }
+}
+
+.behaviours {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    margin-bottom: 5rem;
+}
+
+.behaviour {
+
+    &__expertises {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.expertise {
+    padding: 2rem 1rem 2rem 0;
+    background: $primary-100;
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    border-radius: .5rem;
+    box-shadow: 0 0 .5rem $primary-400;
+
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .5rem;
+    }
+}
+
+.stack {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    &__techno {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+        background: $primary-100;
+        padding: 1rem;
+        border-radius: .5rem;
+        box-shadow: 0 0 .5rem $primary-400;
+        
+        svg {
+            max-width: 5rem;
+            max-height: 5rem;
+        }
+    }
+}
+
+body.dark {
+    #expertises {
+        background: $primary-800;
+    }
+
+    .expertise {
+        background: $primary-900;
+        box-shadow: 0 0 .5rem $dark-shadow;
+
+        svg {
+            fill: white;
+            stroke: white;
+        }
+    }
+
+    .stack {
+        &__techno {
+            background: $primary-900;
+            box-shadow: 0 0 .5rem $dark-shadow;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+    .stack {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (min-width: $breakpoint-lg) {
+    .behaviours {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .expertise {
+        min-height: 14rem;
+        padding: 1.5rem 1rem 1.5rem 0;
+    }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+    .expertise {
+        min-height: 10rem;
+    }
+
+    .stack {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}

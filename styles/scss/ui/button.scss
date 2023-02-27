@@ -1,0 +1,35 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid $primary-900;
+    background: $primary-100;
+    color: $primary-900;
+    box-shadow: 0 0 .5rem $primary-500;
+    line-height: 2rem;
+    cursor: pointer;
+    width: 100%;
+
+    svg {
+        width: 1.8rem;
+        fill: $primary-900;
+    }
+}
+
+@media screen and (min-width: $breakpoint-sm) {
+    .button {
+        width: inherit;
+    }
+}
+
+body.dark {
+    .button {
+            box-shadow: 0 0 1rem $dark-shadow;
+        }
+}

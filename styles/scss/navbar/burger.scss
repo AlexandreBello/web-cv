@@ -1,0 +1,60 @@
+.burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    span {
+        width: 2.1rem;
+        height: 4px;
+        border-radius: 20rem;
+        background: $primary-900;
+        position: relative;
+        transition: width .4s ease;
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            border-radius: 20rem;
+            background: $primary-900;
+        }
+
+        &::before {
+            top: calc(-.8rem);
+            right: 0;
+            width: 2.5rem;
+
+        }
+
+        &::after {
+            top: calc(.8rem);
+            right: 0;
+            width: 1rem;
+            transition: width .4s ease;
+
+        }
+    }
+
+    &:hover span {
+        width: 2.5rem;
+
+        &::after {
+            width: 2.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+    .burger {
+        display: none;
+    }
+}
+
+body.dark {
+    .burger span, .burger span::before, .burger span::after {
+        background: $primary-100;
+    }
+}

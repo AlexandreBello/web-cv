@@ -1,0 +1,32 @@
+button#onTop {
+    display: none;
+    position: fixed;
+    transition: opacity .5s ease-out;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 20rem;
+    border: 2px solid $primary-900;
+    background: $primary-100;
+    outline: none;
+    transition: all .2s;
+
+    svg {
+        height: 1.5rem;
+        fill: $primary-900;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background: $primary-900;
+
+        svg {fill:$primary-100}
+    }
+}
+
+body.dark {
+    button#onTop {
+        border-color: $primary-100;
+    }
+}

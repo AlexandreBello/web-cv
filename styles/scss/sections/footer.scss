@@ -1,0 +1,109 @@
+footer {
+    background: $primary-200;
+    padding: $section-p;
+    font-family: "Lora";
+
+    h2 {
+        text-align: center;
+        margin-bottom: 5rem;
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
+    }
+
+    p {
+        margin-top: 8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 1rem;
+        }
+    }
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    &__way {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &--logo {
+            background: $primary-100;
+            padding: 1rem;
+            border-radius: 20rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 1rem $primary-400;
+
+            svg {
+                width: 5rem;
+                height: 5rem;
+            }
+        }
+
+        &--description {
+            a {
+                text-decoration: none;
+                color: $primary-900;
+                font-weight: 700;
+                position: relative;
+
+                &:hover {
+                    color: $secondary;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -6px;
+                    border-radius: 20rem;
+                    width: 100%;
+                    height: 3px;
+                    background: $secondary;
+                    translate: all .2s;
+                }
+            }
+        }
+    }
+}
+
+body.dark {
+    footer {
+        background: $primary-800;
+   
+        .contact {
+
+            &__way {
+
+                &--logo {
+                    background: $primary-100;
+                    box-shadow: 0 0 1rem $dark-shadow;
+                }
+        
+                &--description {
+                    a {
+                        color: $primary-100;
+
+                        &:hover {
+                            color: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-md){
+    .contact {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

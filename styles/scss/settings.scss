@@ -1,0 +1,99 @@
+/* TYPOGRAPHY */
+@font-face {
+    font-family: "Poppins";
+    src: url("../../fonts/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: "Lora";
+    src: url("../../fonts/Lora-Regular.ttf");
+}
+@font-face {
+    font-family: "Chakra";
+    src: url("../../fonts/ChakraPetch-Regular.ttf");
+}
+
+/* VARIABLES - COLORS */
+$primary-100: #F8F9FA;
+$primary-200: #E9ECEF;
+$primary-300: #DEE2E6;
+$primary-400: #CED4DA;
+$primary-500: #ADB5BD;
+$primary-600: #6C757D;
+$primary-700: #495057;
+$primary-800: #343A40;
+$primary-900: #212529;
+$dark-shadow: #171a1d; 
+$secondary: #3993DD;
+
+/* BREAKPOINT */
+$breakpoint-sm: 599px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1400px;
+
+/* SECTION SIZES */
+$section-p: 6rem 0;
+
+/* RESET */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* BODY */
+body {
+    position: relative;
+    height: 1000px;
+    background-color: $primary-100;
+    color: $primary-900;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+body.dark {
+    background-color: $primary-900;
+    color: $primary-100;
+}
+
+/* TYPO */
+h1 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: "Lora";
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: .5rem;
+}
+
+@media screen and (min-width: $breakpoint-md){
+    .container {
+        width: $breakpoint-md;
+    }
+}
+@media screen and (min-width: $breakpoint-lg){
+    .container {
+        width: $breakpoint-lg;
+    }
+}
+@media screen and (min-width: $breakpoint-xl){
+    .container {
+        width: $breakpoint-xl;
+    }
+}
